@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Journal - Diary</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/diary.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo">
+      <img src="logo1.png" height="35px" width="200px" >
+    </div>
+    <nav>
+      <a href="home.html" class="nav-link">Home</a>
+      <a href="gallery.html" class="nav-link">Gallery</a>
+      <a href="diary.html" class="nav-link active">Diary</a>
+      <a href="travel.html" class="nav-link">Travel Logs</a>
+      <button id="logout-btn" class="btn btn-outline">Logout</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="page-header">
+      <h1>Diary</h1>
+      <p>Write your story and reflect on your journey</p>
+      <button id="add-entry-btn" class="btn btn-primary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus">
+          <path d="M5 12h14"></path>
+          <path d="M12 5v14"></path>
+        </svg>
+        Add Journal Entry
+      </button>
+    </section>
+
+    <section id="entries-container" class="entries-container">
+      <!-- Entries will be dynamically added here -->
+      <div class="empty-state" id="empty-diary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-text">
+          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+          <path d="M6 8h2"></path>
+          <path d="M6 12h2"></path>
+          <path d="M16 8h2"></path>
+          <path d="M16 12h2"></path>
+        </svg>
+        <h3>No diary entries yet</h3>
+        <p>Start writing about your travel experiences</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Add Entry Modal -->
+  <div id="entry-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h2>Add Journal Entry</h2>
+      <form id="entry-form">
+        <div class="form-group">
+          <label for="entry-title">Title</label>
+          <input type="text" id="entry-title" name="entry-title" required placeholder="Name this memory...">
+        </div>
+        <div class="form-group">
+          <label for="entry-date">Date</label>
+          <input type="date" id="entry-date" name="entry-date" required>
+        </div>
+        <div class="form-group">
+          <label for="entry-mood">Mood</label>
+          <select id="entry-mood" name="entry-mood">
+            <option value="excited">Excited</option>
+            <option value="happy">Happy</option>
+            <option value="peaceful">Peaceful</option>
+            <option value="nostalgic">Nostalgic</option>
+            <option value="tired">Tired</option>
+            <option value="anxious">Anxious</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="entry-content">Your Thoughts</label>
+          <textarea id="entry-content" name="entry-content" rows="6" required placeholder="Write about your experience..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Save Entry</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Entry Detail Modal -->
+  <div id="entry-detail-modal" class="modal">
+    <div class="modal-content entry-detail-content">
+      <span class="close-button">&times;</span>
+      <div id="detailed-entry-container">
+        <h2 id="detailed-title"></h2>
+        <div class="entry-meta">
+          <span id="detailed-date"></span>
+          <span id="detailed-mood" class="mood-tag"></span>
+        </div>
+        <div id="detailed-content" class="entry-content"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Wandernest. Your memories, your journey.</p>
+  </footer>
+
+  <script src="scripts/auth.js"></script>
+  <script src="scripts/storage.js"></script>
+  <script src="scripts/diary.js"></script>
+</body>
+</html>

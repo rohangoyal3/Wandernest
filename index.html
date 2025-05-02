@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Journal - Sign In</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/signin.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container signin-container">
+    <div class="signin-card">
+      <div class="signin-header">
+        <div class="logo">
+          <!-- <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map">
+            <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
+            <line x1="9" x2="9" y1="3" y2="18"></line>
+            <line x1="15" x2="15" y1="6" y2="21"></line>
+          </svg> -->
+          <div class="logo">
+            <img src="logo1.png" height="50px" width="300px" >
+          </div>
+        </div>
+        <!-- <h1>Travel Journal</h1> -->
+        <p>Sign in to continue your journey</p>
+      </div>
+      <form id="signin-form">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required>
+          <span class="error-message" id="username-error"></span>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required>
+          <span class="error-message" id="password-error"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Sign In</button>
+      </form>
+      <div class="signin-footer">
+        <p>Don't have an account? <button id="register-toggle" class="text-button">Register</button></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Registration Modal -->
+  <div id="register-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h2>Create Account</h2>
+      <form id="register-form">
+        <div class="form-group">
+          <label for="reg-username">Username</label>
+          <input type="text" id="reg-username" name="reg-username" required>
+        </div>
+        <div class="form-group">
+          <label for="reg-password">Password</label>
+          <input type="password" id="reg-password" name="reg-password" required>
+        </div>
+        <div class="form-group">
+          <label for="reg-confirm-password">Confirm Password</label>
+          <input type="password" id="reg-confirm-password" name="reg-confirm-password" required>
+          <span class="error-message" id="register-error"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="scripts/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Journal - Home</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/home.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo">
+      <img src="logo1.png" height="35px" width="200px" >
+    </div>
+    <nav>
+      <button id="logout-btn" class="btn btn-outline">Logout</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="welcome-section">
+      <h1>Welcome, <span id="user-name">Traveler</span>!</h1>
+      <p>What travel memories would you like to capture today?</p>
+    </section>
+
+    <section class="dashboard">
+      <div class="card" id="photo-card">
+        <div class="card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-camera">
+            <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path>
+            <circle cx="12" cy="13" r="3"></circle>
+          </svg>
+        </div>
+        <h2>Photo Gallery</h2>
+        <p>Capture the moment with your travel photos</p>
+        <a href="gallery.html" class="card-link">View Gallery</a>
+      </div>
+
+      <div class="card" id="diary-card">
+        <div class="card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+          </svg>
+        </div>
+        <h2>Diary</h2>
+        <p>Write your story and reflect on your journey</p>
+        <a href="diary.html" class="card-link">Open Diary</a>
+      </div>
+
+      <div class="card" id="travel-card">
+        <div class="card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-luggage">
+            <path d="M6 20h12"></path>
+            <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+            <rect width="16" height="16" x="4" y="7" rx="2"></rect>
+            <path d="M10 7v16"></path>
+            <path d="M14 7v16"></path>
+          </svg>
+        </div>
+        <h2>Travel Logs</h2>
+        <p>Plan, record, and remember your adventures</p>
+        <a href="travel.html" class="card-link">View Logs</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Wandernest. Your memories, your journey.</p>
+  </footer>
+
+  <script src="scripts/auth.js"></script>
+  <script src="scripts/home.js"></script>
+</body>
+</html>
