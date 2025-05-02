@@ -1,0 +1,179 @@
+/* Home Page Styles */
+.welcome-section {
+  text-align: center;
+  margin-bottom: var(--spacing-xxl);
+  padding: var(--spacing-xl) 0;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.welcome-section h1 {
+  color: var(--color-primary-dark);
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.welcome-section p {
+  color: var(--color-gray-600);
+  font-size: 1.25rem;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-xxl);
+}
+
+.card {
+  background-color: white;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--spacing-xl);
+  text-align: center;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: slideUp 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.card:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.card:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  transition: all var(--transition-speed);
+}
+
+#photo-card::before {
+  background-color: var(--color-primary);
+}
+
+#diary-card::before {
+  background-color: var(--color-secondary);
+}
+
+#travel-card::before {
+  background-color: var(--color-accent);
+}
+
+.card:hover::before {
+  height: 8px;
+}
+
+.card-icon {
+  margin-bottom: var(--spacing-lg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  transition: all var(--transition-speed);
+}
+
+#photo-card .card-icon {
+  color: var(--color-primary);
+  background-color: rgba(42, 157, 244, 0.1);
+}
+
+#diary-card .card-icon {
+  color: var(--color-secondary);
+  background-color: rgba(255, 126, 95, 0.1);
+}
+
+#travel-card .card-icon {
+  color: var(--color-accent);
+  background-color: rgba(38, 196, 133, 0.1);
+}
+
+.card h2 {
+  color: var(--color-gray-800);
+  margin-bottom: var(--spacing-sm);
+}
+
+.card p {
+  color: var(--color-gray-600);
+  margin-bottom: var(--spacing-lg);
+}
+
+.card-link {
+  display: inline-block;
+  font-weight: 600;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--border-radius-md);
+  transition: all var(--transition-speed);
+}
+
+#photo-card .card-link {
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+#photo-card .card-link:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+#diary-card .card-link {
+  color: var(--color-secondary);
+  border: 2px solid var(--color-secondary);
+}
+
+#diary-card .card-link:hover {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+#travel-card .card-link {
+  color: var(--color-accent);
+  border: 2px solid var(--color-accent);
+}
+
+#travel-card .card-link:hover {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .welcome-section {
+    padding: var(--spacing-lg) 0;
+  }
+  
+  .welcome-section h1 {
+    font-size: 2rem;
+  }
+  
+  .dashboard {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+  
+  .card {
+    padding: var(--spacing-lg);
+  }
+}
